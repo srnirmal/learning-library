@@ -240,32 +240,32 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 
 3. Configure the name of the REST download service.
 
-    ```
-    <copy>
-		ahfctl setupgrade -servicename test_ep
+	```
+	<copy>
+	ahfctl setupgrade -servicename test_ep
 
-		AHF autoupgrade parameters successfully updated
-		Successfully synced AHF configuration
-		</copy>
-    ```
+	AHF autoupgrade parameters successfully updated
+	Successfully synced AHF configuration
+	</copy>
+	```
 
 4. Run the upgrade command and specify the **-nomos** command option to upgrade without MOS configuration.
 
-		```
-		<copy>
-		ahfctl upgrade -nomos
+	```
+	<copy>
+	ahfctl upgrade -nomos
 
-		Upload configuration check for: test_ep.
+	Upload configuration check for: test_ep.
 
-		Parameters are configured correctly to upload.
-		AHF-LINUX_v22.2.0.zip successfully downloaded at /opt/oracle.ahf
-		/opt/oracle.ahf/AHF-LINUX_v22.2.0.zip successfully extracted at /opt/oracle.ahf
-		AHF software signature has been validated successfully
-		AHF is already running latest version. No need to upgrade.
-		</copy>
-    ```
+	Parameters are configured correctly to upload.
+	AHF-LINUX_v22.2.0.zip successfully downloaded at /opt/oracle.ahf
+	/opt/oracle.ahf/AHF-LINUX_v22.2.0.zip successfully extracted at /opt/oracle.ahf
+	AHF software signature has been validated successfully
+	AHF is already running latest version. No need to upgrade.
+	</copy>
+	```
 
-	**Note:** test_ep upload configuration must contain the **AHF-LINUX_v22.2.0.zip** file and the upgrade could be executed correctly. To check if this file exists in the object storage, run the **curl get** command.
+**Note:** To run the upgrade, **test\_ep** upload configuration must contain the **AHF-LINUX\_v22.2.0.zip** file. To check if this file exists in the object storage, run the **curl get** command.
 
 ## Task 3: Downloading AHF Installer Zip File from MOS
 
