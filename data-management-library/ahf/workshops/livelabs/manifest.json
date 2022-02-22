@@ -10,24 +10,16 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "./../../ahf-autoupgrade-intro/ahf-autoupgrade-intro.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Installing Oracle Autonomous Health Framework (AHF)",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../../ahf-autoupgrade-install/ahf-autoupgrade-install.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
-        },
-        {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 2: Upgrading Oracle Autonomous Health Framework (AHF)",
+            "filename": "../../../ahf-autoupgrade-upgrade/ahf-autoupgrade-upgrade.md"
         },
         {
             "title": "Need Help?",
