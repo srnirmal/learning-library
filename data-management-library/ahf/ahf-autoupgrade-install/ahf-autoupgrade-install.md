@@ -22,7 +22,7 @@ This lab assumes you have:
 
 To obtain the fullest capabilities of Oracle Autonomous Health Framework, install it as **root**.
 
-Oracle Autonomous Health Framework maintains Access Control Lists (ACLs) to determine which users are allowed access. By default, the **GRID_HOME** owner and **ORACLE_HOME** owners have access to their respective diagnostics. No other users can perform diagnostic collections.
+Oracle Autonomous Health Framework maintains Access Control Lists (ACLs) to determine which users are allowed access. By default, the **Grid home** owner and **Oracle home** owners have access to their respective diagnostics. No other users can perform diagnostic collections.
 
 If Oracle Autonomous Health Framework is already installed, then reinstalling performs an upgrade to the existing location.
 
@@ -30,59 +30,47 @@ If Oracle Autonomous Health Framework is already installed, then reinstalling pe
 
 2. To ensure that the environment has been set correctly, enter the following commands:
 
-  ```
-  <copy>umask
-  env | more
-  </copy>
-  ```
+    ```
+    <copy>umask
+    env | more
+    </copy>
+    ```
 
 3. Verify that the **umask** command displays a value of **22**, **022**, or **0022**.
 
-  ```
-	<copy>>>$ umask
-  0022
-	</copy>
-  ```
+    ```
+    <copy>umask
+    0022
+    </copy>
+    ```
 
 4. Run the **ahf_setup** script:
 
-  ```
-   <copy>./ahf_setup</copy>
-
+    ```
+    <copy>./ahf_setup</copy>
+    ```
 	 If you plan to run only Oracle ORAchk or Oracle EXAchk and do not want to run any Oracle Trace File Analyzer processes, then use the install option of **-extract -notfasetup**.
 
-	 <copy>
-	 ahf_setup -extract -notfasetup
+    ```
+	  <copy>
+	  ahf_setup -extract -notfasetup
 
-	 AHF Installer for Platform Linux Architecture x86_64
-
-	 AHF Installation Log : /tmp/ahf_install_221000_98374_2022_02_02-13_33_27.log
-
-	 Starting Autonomous Health Framework (AHF) Installation
-
-	 AHF Version: 22.1.0 Build Date: 202201302324
-
-	 Default AHF Location : /opt/oracle.ahf
-
-	 Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
-
-	 AHF Location : /opt/oracle.ahf
-
-	 AHF Data Directory : /opt/oracle.ahf/data
-
-	 Extracting AHF to /opt/oracle.ahf
-
-	 AHF is deployed at /opt/oracle.ahf
-
-	 ORAchk is available at /opt/oracle.ahf/bin/orachk
-
-	 AHF binaries are available in /opt/oracle.ahf/bin
-
-	 AHF is successfully installed
-
-	 Moving /tmp/ahf_install_221000_98374_2022_02_02-13_33_27.log to /opt/oracle.ahf/data/den02mwa/diag/ahf/
-	 </copy>
-   ```
+	  AHF Installer for Platform Linux Architecture x86_64
+	  AHF Installation Log : /tmp/ahf_install_221000_98374_2022_02_02-13_33_27.log
+	  Starting Autonomous Health Framework (AHF) Installation
+	  AHF Version: 22.1.0 Build Date: 202201302324
+	  Default AHF Location : /opt/oracle.ahf
+	  Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
+	  AHF Location : /opt/oracle.ahf
+	  AHF Data Directory : /opt/oracle.ahf/data
+	  Extracting AHF to /opt/oracle.ahf
+	  AHF is deployed at /opt/oracle.ahf
+	  ORAchk is available at /opt/oracle.ahf/bin/orachk
+	  AHF binaries are available in /opt/oracle.ahf/bin
+	  AHF is successfully installed
+	  Moving /tmp/ahf_install_221000_98374_2022_02_02-13_33_27.log to /opt/oracle.ahf/data/den02mwa/diag/ahf/
+	  </copy>
+    ```
 
 	 The installation prompts you to do a local or cluster installation.
 
@@ -92,79 +80,59 @@ If Oracle Autonomous Health Framework is already installed, then reinstalling pe
 
 	 **Local installation:**
 
-   ```
-	 <copy>
-	 ahf_setup
+    ```
+	  <copy>
+	  ahf_setup
+	  AHF Installer for Platform Linux Architecture x86_64
+	  AHF Installation Log : /tmp/ahf_install_221000_103911_2022_02_02-13_38_15.log
+	  Starting Autonomous Health Framework (AHF) Installation
+	  AHF Version: 22.1.0 Build Date: 202201302324
+	  Default AHF Location : /opt/oracle.ahf
+	  Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
+	  AHF Location : /opt/oracle.ahf
+	  AHF Data Directory stores diagnostic collections and metadata.
+	  AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
+	  Please Enter AHF Data Directory : /opt/oracle.ahf
+	  AHF Data Directory : /opt/oracle.ahf/data
+	  Do you want to add AHF Notification Email IDs ? [Y]|N : N
+	  Extracting AHF to /opt/oracle.ahf
+	  Configuring TFA Services
+	  Discovering Nodes and Oracle Resources
+	  Successfully generated certificates.
+	  Starting TFA Services
+	  Created symlink from /etc/systemd/system/multi-user.target.wants/oracle-tfa.service to /etc/systemd/system/oracle-tfa.service.
+	  Created symlink from /etc/systemd/system/graphical.target.wants/oracle-tfa.service to /etc/systemd/system/oracle-tfa.service.
 
-	 AHF Installer for Platform Linux Architecture x86_64
+	  .-------------------------------------------------------------------------------.
+	  | Host     | Status of TFA | PID    | Port  | Version    | Build ID             |
+	  +----------+---------------+--------+-------+------------+----------------------+
+	  | den02mwa | RUNNING       | 105916 | 59452 | 22.1.0.0.0 | 22100020220130232427 |
+	  '----------+---------------+--------+-------+------------+----------------------'
 
-	 AHF Installation Log : /tmp/ahf_install_221000_103911_2022_02_02-13_38_15.log
+	  Running TFA Inventory...
+	  Adding default users to TFA Access list...
 
-	 Starting Autonomous Health Framework (AHF) Installation
+	  .------------------------------------------------------.
+	  |             Summary of AHF Configuration             |
+	  +-----------------+------------------------------------+
+	  | Parameter       | Value                              |
+	  +-----------------+------------------------------------+
+	  | AHF Location    | /opt/oracle.ahf                    |
+	  | TFA Location    | /opt/oracle.ahf/tfa                |
+	  | Orachk Location | /opt/oracle.ahf/orachk             |
+	  | Data Directory  | /opt/oracle.ahf/data               |
+	  | Repository      | /opt/oracle.ahf/data/repository    |
+	  | Diag Directory  | /opt/oracle.ahf/data/den02mwa/diag |
+	  '-----------------+------------------------------------'
 
-	 AHF Version: 22.1.0 Build Date: 202201302324
+	  Starting orachk scheduler from AHF ...
+	  AHF binaries are available in /opt/oracle.ahf/bin
+	  AHF is successfully installed
 
-	 Default AHF Location : /opt/oracle.ahf
-
-	 Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
-
-	 AHF Location : /opt/oracle.ahf
-
-	 AHF Data Directory stores diagnostic collections and metadata.
-	 AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
-
-	 Please Enter AHF Data Directory : /opt/oracle.ahf
-
-	 AHF Data Directory : /opt/oracle.ahf/data
-
-	 Do you want to add AHF Notification Email IDs ? [Y]|N : N
-
-	 Extracting AHF to /opt/oracle.ahf
-
-	 Configuring TFA Services
-
-	 Discovering Nodes and Oracle Resources
-
-	 Successfully generated certificates.
-
-	 Starting TFA Services
-	 Created symlink from /etc/systemd/system/multi-user.target.wants/oracle-tfa.service to /etc/systemd/system/oracle-tfa.service.
-	 Created symlink from /etc/systemd/system/graphical.target.wants/oracle-tfa.service to /etc/systemd/system/oracle-tfa.service.
-
-	 .-------------------------------------------------------------------------------.
-	 | Host     | Status of TFA | PID    | Port  | Version    | Build ID             |
-	 +----------+---------------+--------+-------+------------+----------------------+
-	 | den02mwa | RUNNING       | 105916 | 59452 | 22.1.0.0.0 | 22100020220130232427 |
-	 '----------+---------------+--------+-------+------------+----------------------'
-
-	 Running TFA Inventory...
-
-	 Adding default users to TFA Access list...
-
-	 .------------------------------------------------------.
-	 |             Summary of AHF Configuration             |
-	 +-----------------+------------------------------------+
-	 | Parameter       | Value                              |
-	 +-----------------+------------------------------------+
-	 | AHF Location    | /opt/oracle.ahf                    |
-	 | TFA Location    | /opt/oracle.ahf/tfa                |
-	 | Orachk Location | /opt/oracle.ahf/orachk             |
-	 | Data Directory  | /opt/oracle.ahf/data               |
-	 | Repository      | /opt/oracle.ahf/data/repository    |
-	 | Diag Directory  | /opt/oracle.ahf/data/den02mwa/diag |
-	 '-----------------+------------------------------------'
-
-	 Starting orachk scheduler from AHF ...
-
-	 AHF binaries are available in /opt/oracle.ahf/bin
-
-	 AHF is successfully installed
-
-	 Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] : N
-
-	 Moving /tmp/ahf_install_221000_103911_2022_02_02-13_38_15.log to /opt/oracle.ahf/data/den02mwa/diag/ahf/
-	 </copy>
-   ```
+	  Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] : N
+	  Moving /tmp/ahf_install_221000_103911_2022_02_02-13_38_15.log to /opt/oracle.ahf/data/den02mwa/diag/ahf/
+	  </copy>
+    ```
 
 	 **Cluster-wide Installation:**
 
@@ -172,178 +140,172 @@ If Oracle Autonomous Health Framework is already installed, then reinstalling pe
 
 	 Cluster installation requires passwordless SSH user equivalency for root to all cluster nodes. If you have not already configured passwordless SSH user equivalency, then the installation optionally sets up passwordless SSH user equivalency and then removes it at the end.
 
-   ```
-	 <copy>
-	 ahf_setup
+    ```
+	  <copy>
+	  ahf_setup
 
-	 AHF Installer for Platform Linux Architecture x86_64
+	  AHF Installer for Platform Linux Architecture x86_64
+	  AHF Installation Log : /tmp/ahf_install_221000_13129_2022_02_03-20_53_26.log
 
-	 AHF Installation Log : /tmp/ahf_install_221000_13129_2022_02_03-20_53_26.log
+	  Starting Autonomous Health Framework (AHF) Installation
+	  AHF Version: 22.1.0 Build Date: 202202030823
+	  Default AHF Location : /opt/oracle.ahf
+	  Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
+	  AHF Location : /opt/oracle.ahf
+	  AHF Data Directory stores diagnostic collections and metadata.
+	  AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
 
-	 Starting Autonomous Health Framework (AHF) Installation
+	  Choose Data Directory from below options :
 
-	 AHF Version: 22.1.0 Build Date: 202202030823
+	  1. /u01/app/giusr [Free Space : 28917 MB]
+	  2. Enter a different Location
 
-	 Default AHF Location : /opt/oracle.ahf
+	  Choose Option [1 - 2] : 2
 
-	 Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
+	  Please Enter AHF Data Directory : /opt/oracle.ahf
 
-	 AHF Location : /opt/oracle.ahf
+	  AHF Data Directory : /opt/oracle.ahf/data
 
-	 AHF Data Directory stores diagnostic collections and metadata.
-	 AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
+	  Do you want to add AHF Notification Email IDs ? [Y]|N : N
 
-	 Choose Data Directory from below options :
+	  AHF will also be installed/upgraded on these Cluster Nodes :
 
-	 1. /u01/app/giusr [Free Space : 28917 MB]
-	 2. Enter a different Location
+	  1. stbm000037-vm2
 
-	 Choose Option [1 - 2] : 2
+	  The AHF Location and AHF Data Directory must exist on the above nodes
+	  AHF Location : /opt/oracle.ahf
+	  AHF Data Directory : /opt/oracle.ahf/data
 
-	 Please Enter AHF Data Directory : /opt/oracle.ahf
+	  Do you want to install/upgrade AHF on Cluster Nodes ? [Y]|N :
 
-	 AHF Data Directory : /opt/oracle.ahf/data
+	  Extracting AHF to /opt/oracle.ahf
 
-	 Do you want to add AHF Notification Email IDs ? [Y]|N : N
+	  Configuring TFA Services
 
-	 AHF will also be installed/upgraded on these Cluster Nodes :
+	  Discovering Nodes and Oracle Resources
 
-	 1. stbm000037-vm2
+	  Not generating certificates as GI discovered
 
-	 The AHF Location and AHF Data Directory must exist on the above nodes
-	 AHF Location : /opt/oracle.ahf
-	 AHF Data Directory : /opt/oracle.ahf/data
+	  Starting TFA Services
+	  Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service ¿ /etc/systemd/system/oracle-tfa.service.
+	  Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service ¿ /etc/systemd/system/oracle-tfa.service.
 
-	 Do you want to install/upgrade AHF on Cluster Nodes ? [Y]|N :
+	  .-----------------------------------------------------------------------------------.
+	  | Host           | Status of TFA | PID   | Port | Version    | Build ID             |
+	  +----------------+---------------+-------+------+------------+----------------------+
+	  | stbm000037-vm1 | RUNNING       | 17450 | 5000 | 22.1.0.0.0 | 22100020220203082328 |
+	  '----------------+---------------+-------+------+------------+----------------------'
 
-	 Extracting AHF to /opt/oracle.ahf
+	  Running TFA Inventory...
 
-	 Configuring TFA Services
+	  Adding default users to TFA Access list...
 
-	 Discovering Nodes and Oracle Resources
+	  .------------------------------------------------------------.
+	  |                Summary of AHF Configuration                |
+	  +-----------------+------------------------------------------+
+	  | Parameter       | Value                                    |
+	  +-----------------+------------------------------------------+
+	  | AHF Location    | /opt/oracle.ahf                          |
+	  | TFA Location    | /opt/oracle.ahf/tfa                      |
+	  | Orachk Location | /opt/oracle.ahf/orachk                   |
+	  | Data Directory  | /opt/oracle.ahf/data                     |
+	  | Repository      | /opt/oracle.ahf/data/repository          |
+	  | Diag Directory  | /opt/oracle.ahf/data/stbm000037-vm1/diag |
+	  '-----------------+------------------------------------------'
 
-	 Not generating certificates as GI discovered
+	  Starting orachk scheduler from AHF ...
 
-	 Starting TFA Services
-	 Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service ¿ /etc/systemd/system/oracle-tfa.service.
-	 Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service ¿ /etc/systemd/system/oracle-tfa.service.
+	  AHF install completed on stbm000037-vm1
 
-	 .-----------------------------------------------------------------------------------.
-	 | Host           | Status of TFA | PID   | Port | Version    | Build ID             |
-	 +----------------+---------------+-------+------+------------+----------------------+
-	 | stbm000037-vm1 | RUNNING       | 17450 | 5000 | 22.1.0.0.0 | 22100020220203082328 |
-	 '----------------+---------------+-------+------+------------+----------------------'
+	  Installing AHF on Remote Nodes :
 
-	 Running TFA Inventory...
+	  AHF will be installed on stbm000037-vm2, Please wait.
 
-	 Adding default users to TFA Access list...
+	  Please Enter the password for stbm000037-vm2 :
 
-	 .------------------------------------------------------------.
-	 |                Summary of AHF Configuration                |
-	 +-----------------+------------------------------------------+
-	 | Parameter       | Value                                    |
-	 +-----------------+------------------------------------------+
-	 | AHF Location    | /opt/oracle.ahf                          |
-	 | TFA Location    | /opt/oracle.ahf/tfa                      |
-	 | Orachk Location | /opt/oracle.ahf/orachk                   |
-	 | Data Directory  | /opt/oracle.ahf/data                     |
-	 | Repository      | /opt/oracle.ahf/data/repository          |
-	 | Diag Directory  | /opt/oracle.ahf/data/stbm000037-vm1/diag |
-	 '-----------------+------------------------------------------'
+	  Is password same for all the nodes? [Y]|N :
 
-	 Starting orachk scheduler from AHF ...
+	  Installing AHF on stbm000037-vm2 :
 
-	 AHF install completed on stbm000037-vm1
+	  [stbm000037-vm2] Copying AHF Installer
 
-	 Installing AHF on Remote Nodes :
+	  AHF binaries are available in /opt/oracle.ahf/bin
 
-	 AHF will be installed on stbm000037-vm2, Please wait.
+	  AHF is successfully installed
 
-	 Please Enter the password for stbm000037-vm2 :
+	  Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] :
 
-	 Is password same for all the nodes? [Y]|N :
-
-	 Installing AHF on stbm000037-vm2 :
-
-	 [stbm000037-vm2] Copying AHF Installer
-
-	 AHF binaries are available in /opt/oracle.ahf/bin
-
-	 AHF is successfully installed
-
-	 Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] :
-
-	 Moving /tmp/ahf_install_221000_13129_2022_02_03-20_53_26.log to /opt/oracle.ahf/data/stbm000037-vm1/diag/ahf/
-	 </copy>
-   ```
+	  Moving /tmp/ahf_install_221000_13129_2022_02_03-20_53_26.log to /opt/oracle.ahf/data/stbm000037-vm1/diag/ahf/
+	  </copy>
+    ```
 
 	 If you do not wish to use passwordless SSH, then you install Oracle Autonomous Health Framework on each host using a local installation. Run the **tfactl syncnodes** command to generate and deploy relevant SSL certificates.
 
-   ```
-	 <copy>
-	 tfactl syncnodes
+    ```
+	  <copy>
+	  tfactl syncnodes
 
-	 TFA has not yet generated any certificates on this Node.
+	  TFA has not yet generated any certificates on this Node.
 
-	 Do you want to generate new certificates to synchronize across the nodes? [Y]|N:
+	  Do you want to generate new certificates to synchronize across the nodes? [Y]|N:
 
-	 Generating new TFA Certificates...
+	  Generating new TFA Certificates...
 
-	 Successfully generated certificates.
+	  Successfully generated certificates.
 
-	 Restarting TFA on stbm000037-vm1...
-	 Shutting down TFA
-	 Removed /etc/systemd/system/graphical.target.wants/oracle-tfa.service.
-	 Removed /etc/systemd/system/multi-user.target.wants/oracle-tfa.service.
-	 Successfully shutdown TFA..
+	  Restarting TFA on stbm000037-vm1...
+	  Shutting down TFA
+	  Removed /etc/systemd/system/graphical.target.wants/oracle-tfa.service.
+	  Removed /etc/systemd/system/multi-user.target.wants/oracle-tfa.service.
+	  Successfully shutdown TFA..
 
-	 Starting TFA..
-	 Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service -> /etc/systemd/system/oracle-tfa.service.
-	 Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service -> /etc/systemd/system/oracle-tfa.service.
-	 Waiting up to 100 seconds for TFA to be started..
-	 . . . . .
-	 . . . . .
-	 Successfully started TFA Process..
-	 . . . . .
-	 TFA Started and listening for commands
+	  Starting TFA..
+	  Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service -> /etc/systemd/system/oracle-tfa.service.
+	  Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service -> /etc/systemd/system/oracle-tfa.service.
+	  Waiting up to 100 seconds for TFA to be started..
+	  . . . . .
+	  . . . . .
+	  Successfully started TFA Process..
+	  . . . . .
+	  TFA Started and listening for commands
 
-	 Current Node List in TFA :
-	 1. stbm000037-vm1
+	  Current Node List in TFA :
+	  1. stbm000037-vm1
 
-	 Node List in Cluster :
-	 1. stbm000037-vm1
-	 2. stbm000037-vm2
+	  Node List in Cluster :
+	  1. stbm000037-vm1
+	  2. stbm000037-vm2
 
-	 Node List to sync TFA Certificates :
-     1  stbm000037-vm2
+	  Node List to sync TFA Certificates :
+    1  stbm000037-vm2
 
-		 Do you want to update this node list? Y|[N]:
+		Do you want to update this node list? Y|[N]:
 
-		 Syncing TFA Certificates on stbm000037-vm2 :
+		Syncing TFA Certificates on stbm000037-vm2 :
 
-		 TFA_HOME on stbm000037-vm2 : /opt/oracle.ahf/tfa
+		TFA_HOME on stbm000037-vm2 : /opt/oracle.ahf/tfa
 
-		 DATA_DIR on stbm000037-vm2 : /opt/oracle.ahf/data/stbm000037-vm2/tfa
+		DATA_DIR on stbm000037-vm2 : /opt/oracle.ahf/data/stbm000037-vm2/tfa
 
-		 Please Enter the password for stbm000037-vm2 :
+		Please Enter the password for stbm000037-vm2 :
 
-		 Is password same for all the nodes? [Y]|N:
+		Is password same for all the nodes? [Y]|N:
 
-		 Shutting down TFA on stbm000037-vm2...
-		 Copying TFA Certificates to stbm000037-vm2...
-		 Copying SSL Properties to stbm000037-vm2...
-		 Sleeping for 5 seconds...
-		 Sleeping for 5 seconds...
-		 Starting TFA on stbm000037-vm2...
+		Shutting down TFA on stbm000037-vm2...
+		Copying TFA Certificates to stbm000037-vm2...
+		Copying SSL Properties to stbm000037-vm2...
+		Sleeping for 5 seconds...
+		Sleeping for 5 seconds...
+		Starting TFA on stbm000037-vm2...
 
-		 .------------------------------------------------------------------------------------------------------.
-		 | Host           | Status of TFA | PID   | Port | Version    | Build ID             | Inventory Status |
-		 +----------------+---------------+-------+------+------------+----------------------+------------------+
-		 | stbm000037-vm1 | RUNNING       | 15331 | 5000 | 22.1.0.0.0 | 22100020220203082328 | COMPLETE         |
-		 | stbm000037-vm2 | RUNNING       | 11384 | 5000 | 22.1.0.0.0 | 22100020220203082328 | COMPLETE         |
-		 '----------------+---------------+-------+------+------------+----------------------+------------------'
-	 </copy>
-   ```
+		.------------------------------------------------------------------------------------------------------.
+		| Host           | Status of TFA | PID   | Port | Version    | Build ID             | Inventory Status |
+		+----------------+---------------+-------+------+------------+----------------------+------------------+
+		| stbm000037-vm1 | RUNNING       | 15331 | 5000 | 22.1.0.0.0 | 22100020220203082328 | COMPLETE         |
+		| stbm000037-vm2 | RUNNING       | 11384 | 5000 | 22.1.0.0.0 | 22100020220203082328 | COMPLETE         |
+		'----------------+---------------+-------+------+------------+----------------------+------------------'
+	  </copy>
+    ```
 
 ## Task 2: Enabling or Disabling the Oracle ORAchk or Oracle EXAchk Daemon to Start Automatically
 
@@ -353,29 +315,29 @@ The daemon restarts at 1 am every day to discover environment changes. The daemo
 
 1. To disable auto start:
 
-  ```
-  <copy>
-	orachk -autostop
+    ```
+    <copy>
+    orachk autostop
 	Removing orachk cache discovery....
 	Successfully completed orachk cache discovery removal.
 	Successfully copied Daemon Store to Remote Nodes
 	Removed orachk from inittab
-	</copy>
-  ```	 
-
+	  </copy>
+    ```
 2. To enable auto start:
 
-  ```
-	<copy>
-	orachk -autostart
+    ```
+	  <copy>
+
+  orachk -autostart
 	.
 	.
 	Successfully copied Daemon Store to Remote Nodes
 	.  .  .
 	orachk is using TFA Scheduler. TFA PID: 11552
 	Daemon log file location is : /opt/oracle.ahf/data/den00pkf/orachk/user_root/output/orachk_daemon.log
-	</copy>
-  ```
+	  </copy>
+    ```
 
 ## Task 3: Installing on Linux or UNIX as Non-root User in Non-Daemon Mode
 
@@ -392,35 +354,23 @@ Oracle Autonomous Health Framework has reduced capabilities when you install it 
 
 1. To install as the Oracle Home owner, use the **–ahf_loc** option, and optionally specify the **-notfasetup** option to prevent the running of any Oracle Trace File Analyzer processes.
 
-  ```
-  <copy>
-	ahf_setup -ahf_loc /ahf -notfasetup
-
+    ```
+    <copy>
+	   ahf_setup -ahf_loc /ahf -notfasetup
 	AHF Installer for Platform Linux Architecture x86_64
-
 	AHF Installation Log : /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log
-
 	Starting Autonomous Health Framework (AHF) Installation
-
 	AHF Version: 22.1.0 Build Date: 202201302324
-
 	AHF Location : /ahf/oracle.ahf
-
 	AHF Data Directory : /ahf/oracle.ahf/data
-
 	Extracting AHF to /ahf/oracle.ahf
-
 	AHF is deployed at /ahf/oracle.ahf
-
 	ORAchk is available at /ahf/oracle.ahf/bin/orachk
-
 	AHF binaries are available in /ahf/oracle.ahf/bin
-
 	AHF is successfully installed
-
 	Moving /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log to /ahf/oracle.ahf/data/den02mwa/diag/ahf/
-	</copy>
-  ```
+	  </copy>
+    ```
 
 	For more information, run **ahf_setup -h**.
 
@@ -469,32 +419,32 @@ AHF is installed successfully. However, later if you switch the mode to **Permis
 
 1. To run AHF, load the SELinux policy:
 
-    ```
-	  <copy>
-		ahfctl loadpolicy
-		Checking if policy exists
-		Please wait while the policy is being loaded, it might take couple of minutes.
-		Successfully loaded SELinux policy
-		Restarting TFA...
-		</copy>
-    ```
+  ```
+	<copy>
+	ahfctl loadpolicy
+	Checking if policy exists
+	Please wait while the policy is being loaded, it might take couple of minutes.
+	Successfully loaded SELinux policy
+	Restarting TFA...
+	</copy>
+  ```
 2. To check if the policy is loaded successfully:
 
-    ```
-	  <copy>
-		/usr/sbin/semodule -l | grep inittfa-policy
-		</copy>	 
-    ```
+  ```
+	<copy>
+	/usr/sbin/semodule -l | grep inittfa-policy
+	</copy>	 
+  ```
 
 3. To unload the SELinux policy:
 
-    ```
-	  <copy>
-		ahfctl unloadpolicy
-		Please wait while the policy is being removed, it might take couple of minutes.
-		Successfully removed Contexts and Policy
-		</copy>
-    ```
+  ```
+	<copy>
+	ahfctl unloadpolicy
+	Please wait while the policy is being removed, it might take couple of minutes.
+	Successfully removed Contexts and Policy
+	</copy>
+  ```
 
 ## Learn More
 
