@@ -6,7 +6,7 @@ The labs in this workshop take you through the steps to install Oracle Autonomou
 
 Estimated Time: 120 minutes
 
-### About <Product/Technology> (Optional)
+### About <Product/Technology>
 Oracle Autonomous Health Framework (AHF) includes the functionality from Oracle ORAchk, Oracle EXAchk, and Oracle Trace File Analyzer (TFA).
 
 **Oracle ORAchk / Oracle EXAchk:** Provides a lightweight and non-intrusive compliance check framework for the Oracle stack of software and hardware components.
@@ -15,28 +15,20 @@ Oracle Autonomous Health Framework (AHF) includes the functionality from Oracle 
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 * Install an older version of AHF
 * Upgrade AHF from Software Stage Location
 * Upgrade AHF from REST endpoints (Object Store)
 * Upgrade AHF from MOS
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * Prior knowledge of using Linux command-line options and Oracle Autonomous Health Framework
 * Prior knowledge of Oracle Database basic concepts
 
-*Below, is the "fold"--where items are collapsed by default.*
-
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [Installing and Upgrading Oracle Autonomous Health Framework](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/install-upgrade-ahf.html#GUID-663F0836-A2A2-4EFB-B19E-EABF303739A9)
 * [ahfctl setupgrade](https://docs-uat.us.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-setupgrade.html#GUID-0AA4D7BE-781D-4345-BC77-A38AF10826BB)

@@ -1,4 +1,4 @@
-# Upgrading AHF Automatically
+# Automatically Upgrading Oracle Autonomous Health Framework
 
 ## Introduction
 
@@ -15,8 +15,6 @@ If a new version of AHF is not found either at the software stage location or at
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 * Upgrade AHF from Software Stage location
 * Upgrade AHF from REST endpoints (Object Store)
@@ -24,13 +22,9 @@ In this lab, you will:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
 This lab assumes you have:
 * You need AHF installed user privileges or **root** access to run **getupgrade**, **setupgrade**, **unsetupgrade**, and **upgrade** commands.
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
-
-*Below, is the "fold"--where items are collapsed by default.*
 
 ### Operating Systems Supported to Upgrade AHF Automatically
 
@@ -359,8 +353,6 @@ You can disable **autoupgrade** if you want to upgrade AHF manually.
 	```
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [Installing and Upgrading Oracle Autonomous Health Framework](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/install-upgrade-ahf.html#GUID-663F0836-A2A2-4EFB-B19E-EABF303739A9)
 * [ahfctl setupgrade](https://docs-uat.us.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-setupgrade.html#GUID-0AA4D7BE-781D-4345-BC77-A38AF10826BB)

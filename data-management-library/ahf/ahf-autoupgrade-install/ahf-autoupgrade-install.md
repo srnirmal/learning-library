@@ -6,26 +6,17 @@ In this lab, you will learn how to install AHF either as **root** or as a non-ro
 
 Estimated Time: 30 minutes
 
-### About <Product/Technology> (Optional)
-
-
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * (Recommended) Install AHF on Linux or UNIX as **root** user in daemon mode
 * Install AHF on Linux or UNIX as a non-root user in non-daemon mode
 * Run AHF on SELinux-enabled systems
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * Perl version 5.10 or later installed.
-
-*Below, is the "fold"--where items are collapsed by default.*
 
 ## Task 1: (Recommended) Installing on Linux or Unix as root User in Daemon Mode
 
@@ -506,8 +497,6 @@ AHF is installed successfully. However, later if you switch the mode to **Permis
     ```
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [Installing and Upgrading Oracle Autonomous Health Framework](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/install-upgrade-ahf.html#GUID-663F0836-A2A2-4EFB-B19E-EABF303739A9)
 * [ahfctl setupgrade](https://docs-uat.us.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-setupgrade.html#GUID-0AA4D7BE-781D-4345-BC77-A38AF10826BB)
