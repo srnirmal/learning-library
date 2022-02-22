@@ -252,7 +252,7 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 4. Run the upgrade command and specify the **-nomos** command option to upgrade without MOS configuration.
 
 		```
-  	<copy>
+		<copy>
 		ahfctl upgrade -nomos
 
 		Upload configuration check for: test_ep.
@@ -263,9 +263,9 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 		AHF software signature has been validated successfully
 		AHF is already running latest version. No need to upgrade.
 		</copy>
-  	```
-		
-	**Note:** **test_ep** upload configuration must contain the **AHF-LINUX_v22.2.0.zip** file and the upgrade could be executed correctly. To check if this file exists in the object storage, run the **curl get** command.
+    ```
+
+	**Note:** test_ep upload configuration must contain the **AHF-LINUX_v22.2.0.zip** file and the upgrade could be executed correctly. To check if this file exists in the object storage, run the **curl get** command.
 
 ## Task 3: Downloading AHF Installer Zip File from MOS
 
