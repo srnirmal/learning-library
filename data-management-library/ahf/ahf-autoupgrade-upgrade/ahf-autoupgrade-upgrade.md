@@ -206,7 +206,7 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 	</copy>
 	```
 
-## Task 2: Upgrading AHF from REST endpoints (Object Store)
+## Task 2: Upgrading AHF from REST Endpoints (Object Store)
 
 1. Configure REST endpoints (Object Store).
 
@@ -251,19 +251,20 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 
 4. Run the upgrade command and specify the **-nomos** command option to upgrade without MOS configuration.
 
-	```
-  <copy>
-	ahfctl upgrade -nomos
+		```
+  	<copy>
+		ahfctl upgrade -nomos
 
-	Upload configuration check for: test_ep.
+		Upload configuration check for: test_ep.
 
-	Parameters are configured correctly to upload.
-	AHF-LINUX_v22.2.0.zip successfully downloaded at /opt/oracle.ahf
-	/opt/oracle.ahf/AHF-LINUX_v22.2.0.zip successfully extracted at /opt/oracle.ahf
-	AHF software signature has been validated successfully
-	AHF is already running latest version. No need to upgrade.
-	</copy>
-  ```
+		Parameters are configured correctly to upload.
+		AHF-LINUX_v22.2.0.zip successfully downloaded at /opt/oracle.ahf
+		/opt/oracle.ahf/AHF-LINUX_v22.2.0.zip successfully extracted at /opt/oracle.ahf
+		AHF software signature has been validated successfully
+		AHF is already running latest version. No need to upgrade.
+		</copy>
+  	```
+		
 	**Note:** **test_ep** upload configuration must contain the **AHF-LINUX_v22.2.0.zip** file and the upgrade could be executed correctly. To check if this file exists in the object storage, run the **curl get** command.
 
 ## Task 3: Downloading AHF Installer Zip File from MOS
