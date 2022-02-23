@@ -1,4 +1,4 @@
-# Automatically Upgrading Oracle Autonomous Health Framework
+# Upgrade Oracle Autonomous Health Framework (AHF)
 
 ## Introduction
 
@@ -20,7 +20,7 @@ In this lab, you will:
 * Upgrade AHF from REST endpoints (Object Store)
 * Upgrade AHF from MOS
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * You need AHF installed user privileges or **root** access to run **getupgrade**, **setupgrade**, **unsetupgrade**, and **upgrade** commands.
@@ -61,7 +61,7 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 
 - If the stage location has AHF binaries in the extracted form, then after upgrading, the installer retains the extracted AHF binaries as is.
 
-## Task 1: Upgrading AHF from Software Stage Location
+## Task 1: Upgrade AHF from Software Stage Location
 
 1. Ensure that you have an older version of AHF installed.
 
@@ -206,7 +206,7 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 	</copy>
 	```
 
-## Task 2: Upgrading AHF from REST Endpoints (Object Store)
+## Task 2: Upgrade AHF from REST Endpoints (Object Store)
 
 1. Configure REST endpoints (Object Store).
 
@@ -267,7 +267,7 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 
 **Note:** To run the upgrade, **test\_ep** upload configuration must contain the **AHF-LINUX\_v22.2.0.zip** file. To check if this file exists in the object storage, run the **curl get** command.
 
-## Task 3: Downloading AHF Installer Zip File from MOS
+## Task 3: Download AHF Installer Zip File from MOS
 
 If a new version of AHF is not found either at the software stage location or at Rest Endpoints (Object Store), then download AHF from MOS to software stage, and then upgrade.
 
@@ -293,7 +293,7 @@ If a new version of AHF is not found either at the software stage location or at
 	AHF-LINUX_v21.1.0.zip successfully downloaded at /opt/oracle.ahf /opt/oracle.ahf/AHF-LINUX_v21.1.0.zip successfully extracted at /opt/oracle.ahf AHF software signature has been validated successfully
 	</copy>
 	```
-## Task 4: Troubleshooting AHF Download from MOS
+## Task 4: Troubleshoot AHF Download from MOS
 
 **Description:** AHF download from MOS fails with the following error:
 
@@ -312,7 +312,7 @@ An error has occurred while downloading AHF from MOS. Please try again!
 	tfactl set tracelevel=MAIN:DEBUG
 	</copy>
 	```
-## Task 5: Unsetting Upgrade Configuration
+## Task 5: Unset Upgrade Configuration
 
 Run the **ahfctl unsetupgrade** command to unset a specific upgrade parameter or all of the upgrade parameters.
 
@@ -339,7 +339,7 @@ Run the **ahfctl unsetupgrade** command to unset a specific upgrade parameter or
 	</copy>
 	```
 
-## Task 6: Disabling Automatic upgrade
+## Task 6: Disable Automatic upgrade
 
 You can disable **autoupgrade** if you want to upgrade AHF manually.
 
