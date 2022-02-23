@@ -6,7 +6,6 @@ In this lab, you will learn how to upgrade AHF on the fly without manually downl
 
 Estimated Time: 30 minutes
 
-### Upgrading AHF Automatically
 Oracle Trace File Analyzer scheduler automatically upgrades AHF if it finds a new version of AHF either at software stage location or at Rest Endpoints (Object Store).
 
 Oracle Trace File Analyzer scheduler is scheduled to run on a weekly time interval to check if a new version of AHF is present at the AHF software stage or at Rest Endpoints (Object Store). If a new version of AHF is found, then the Oracle Trace File Analyzer scheduler will automatically upgrade AHF to the latest version without changing any of the saved configurations.
