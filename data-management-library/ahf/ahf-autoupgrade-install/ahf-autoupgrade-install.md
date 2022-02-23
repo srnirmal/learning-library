@@ -1,4 +1,4 @@
-# Installing Oracle Autonomous Health Framework
+# Install Oracle Autonomous Health Framework (AHF)
 
 ## Introduction
 
@@ -18,7 +18,7 @@ In this lab, you will:
 This lab assumes you have:
 * Perl version 5.10 or later installed.
 
-## Task 1: (Recommended) Installing on Linux or Unix as root User in Daemon Mode
+## Task 1: Install AHF on Linux or UNIX as root User in Daemon Mode
 
 To obtain the fullest capabilities of Oracle Autonomous Health Framework, install it as **root**.
 
@@ -307,7 +307,7 @@ If Oracle Autonomous Health Framework is already installed, then reinstalling pe
     </copy>
     ```
 
-## Task 2: Enabling or Disabling the Oracle ORAchk or Oracle EXAchk Daemon to Start Automatically
+## Task 2: Enable or Disable Oracle ORAchk or Oracle EXAchk Daemon to Start Automatically
 
 Installing Oracle Autonomous Health Framework as **root** on Linux or Solaris automatically sets up and runs the Oracle ORAchk or Oracle EXAchk daemon.
 
@@ -339,7 +339,7 @@ The daemon restarts at 1 am every day to discover environment changes. The daemo
     </copy>
     ```
 
-## Task 3: Installing on Linux or UNIX as Non-root User in Non-Daemon Mode
+## Task 3: Install AHF on Linux or UNIX as Non-root User in Non-Daemon Mode
 
 If you are unable to install as **root**, then install Oracle Autonomous Health Framework as the Oracle Home owner.
 
@@ -374,7 +374,7 @@ Oracle Autonomous Health Framework has reduced capabilities when you install it 
 
 	For more information, run **ahf_setup -h**.
 
-## Task 4: Running AHF on SELinux Enabled Systems
+## Task 4: Run AHF on SELinux Enabled Systems
 
 To run AHF on SELinux-enabled systems, use this procedure.
 
