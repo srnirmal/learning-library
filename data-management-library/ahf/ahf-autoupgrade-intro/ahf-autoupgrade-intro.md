@@ -6,7 +6,7 @@ The labs in this workshop take you through the steps to install Oracle Autonomou
 
 Estimated Time: 120 minutes
 
-### About <Product/Technology>
+### About Oracle Autonomous Health Framework (AHF)
 Oracle Autonomous Health Framework (AHF) includes the functionality from Oracle ORAchk, Oracle EXAchk, and Oracle Trace File Analyzer (TFA).
 
 **Oracle ORAchk / Oracle EXAchk:** Provides a lightweight and non-intrusive compliance check framework for the Oracle stack of software and hardware components.
