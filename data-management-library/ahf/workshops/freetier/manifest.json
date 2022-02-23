@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Automatically Upgrading Oracle Autonomous Health Framework to the Latest Version",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
@@ -13,12 +13,12 @@
             "filename": "./../../ahf-autoupgrade-intro/ahf-autoupgrade-intro.md"
         },
         {
-            "title": "Lab 1: Installing Oracle Autonomous Health Framework (AHF)",
+            "title": "Lab 1: Install Oracle Autonomous Health Framework (AHF)",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./../../ahf-autoupgrade-install/ahf-autoupgrade-install.md"
         },
         {
-            "title": "Lab 2: Upgrading Oracle Autonomous Health Framework (AHF)",
+            "title": "Lab 2: Upgrade Oracle Autonomous Health Framework (AHF)",
             "filename": "./../../ahf-autoupgrade-upgrade/ahf-autoupgrade-upgrade.md"
         },
         {
