@@ -47,7 +47,7 @@ You can upgrade AHF on the local file system, Oracle Automatic Storage Managemen
 
 - If the stage location is a local file system and if the AHF installer zip file exists in the stage location, then after upgrading, the installer retains the AHF installer zip file and removes all the extracted items from the stage location.
 
-- If the stage location has AHF binaries in the extracted form, then after upgrading, the installer renames the ahf_setup script to ahf_setup_xxxx, where xxxx is the version of AHF being upgraded.
+- If the stage location has AHF binaries in the extracted form, then after upgrading, the installer renames the **ahf_setup** script to **ahf\_setup\_xxxx**, where **xxxx** is the version of AHF being upgraded.
 
 **Oracle Automatic Storage Management Cluster File System (Oracle ACFS)**
 
