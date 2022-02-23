@@ -15,11 +15,11 @@
         {
             "title": "Lab 1: Installing Oracle Autonomous Health Framework (AHF)",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../../ahf-autoupgrade-install/ahf-autoupgrade-install.md"
+            "filename": "./../../ahf-autoupgrade-install/ahf-autoupgrade-install.md"
         },
         {
             "title": "Lab 2: Upgrading Oracle Autonomous Health Framework (AHF)",
-            "filename": "../../../ahf-autoupgrade-upgrade/ahf-autoupgrade-upgrade.md"
+            "filename": "./../../ahf-autoupgrade-upgrade/ahf-autoupgrade-upgrade.md"
         },
         {
             "title": "Need Help?",
