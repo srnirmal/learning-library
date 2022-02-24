@@ -506,7 +506,27 @@ AHF installer loads the policy and sets relevant contexts.
 
 **Install AHF in Disabled Mode**
 
-1. To install AHF:
+In Disabled mode, AHF does not load the SELinux policy.
+
+1. To check the status of SELinux and the policy being used:
+
+    ```
+    <copy>
+    /usr/sbin/sestatus
+    SELinux status: disabled
+    </copy>
+    ```
+2. To check if the policy is loaded:
+
+    ```
+    <copy>
+    ahfctl loadpolicy
+    Checking if policy exists
+    SELinux is not enabled on this system
+    </copy>
+    ```
+
+3. To install AHF:
 
     ```
     <copy>
@@ -556,7 +576,10 @@ AHF installer loads the policy and sets relevant contexts.
     Moving /tmp/ahf_install_221000_16953_2022_02_23-14_43_58.log to /opt/oracle.ahf/data/den02lpa/diag/ahf/
     </copy>
     ```
-2. To run AHF, load the SELinux policy:
+
+After installing AHF if you switch the mode to Permissive or Enforcing, then SELinux starts blocking the AHF processes. Reboot the system for the switch in mode to take effect.
+
+1. To run AHF, load the SELinux policy:
 
     ```
     <copy>
@@ -568,15 +591,13 @@ AHF installer loads the policy and sets relevant contexts.
     </copy>
     ```
 
-3. To check if the policy is loaded successfully:
+2. To check if the policy is loaded successfully:
 
     ```
     <copy>
     /usr/sbin/semodule -l | grep inittfa-policy
     </copy>	 
     ```
-
-**Note:** After installing AHF if you switch the mode to Permissive or Enforcing, then SELinux starts blocking the AHF processes. Reboot the system for the switch in mode to take effect.
 
 ## Learn More
 
