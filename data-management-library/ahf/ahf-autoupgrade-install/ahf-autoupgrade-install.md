@@ -440,6 +440,22 @@ The **getenforce** command returns **Enforcing**, **Permissive**, or **Disabled*
     </copy>
     ```
 
+5. To switch from **Enforcing** to **Permissive** mode:
+
+    ```
+    <copy>
+    /usr/sbin/setenforce 0
+    </copy>
+    ```
+
+6. To switch from **Permissive** to **Enforcing** mode:
+
+    ```
+    <copy>
+    /usr/sbin/setenforce 1
+    </copy>
+    ```
+
 **Install AHF in Permissive or Enforcing Mode:**
 
 AHF installer loads the policy and sets relevant contexts.
