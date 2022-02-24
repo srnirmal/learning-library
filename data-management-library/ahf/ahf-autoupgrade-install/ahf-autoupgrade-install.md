@@ -374,50 +374,189 @@ Oracle Autonomous Health Framework has reduced capabilities when you install it 
 
 	For more information, run **ahf_setup -h**.
 
-## Task 4: Run AHF on SELinux Enabled Systems
+## Task 4: Run AHF on SELinux-Enabled Systems
 
-To run AHF on SELinux-enabled systems, use this procedure.
+SELinux runs in one of three modes:
+- **Disabled:** The kernel uses only DAC rules for access control. SELinux does not enforce any security policy because no policy is loaded into the kernel.
+- **Permissive:** The kernel does not enforce security policy rules but SELinux sends denial messages to a log file. This allows you to see what actions would have been denied if SELinux were running in enforcing mode. This mode is intended to used for diagnosing the behavior of SELinux.
+- **Enforcing:** The kernel denies access to users and programs unless permitted by SELinux security policy rules. All denial messages are logged as AVC (Access Vector Cache) denials. This is the default mode that enforces SELinux security policy.
 
-SELinux Modes:
-- **Disabled:** SElinux is disabled.
-- **Permissive:** SELinux prints warnings instead of enforcing.
-- **Enforcing:** SELinux security policy is enforced.
+You can enable or disable SELinux. When enabled, SELinux can run either in **enforcing** or **permissive** mode.
 
-You can enable or disable SELinux. When enabled, SELinux can run either in **enforcing** or **permissive** modes. To check the status of SELinux, run the **getenforce** or **sestatus** commands. The **getenforce** command returns **Enforcing**, **Permissive**, or **Disabled**.
-```
-<copy>
-/usr/sbin/getenforce
-Permissive
-</copy>
-```
+1. To configure default SELinux mode, edit the configuration file for SELinux, **/etc/selinux/config**, and set the value of the **SELINUX** directive to **disabled**, **enforcing**, or **permissive**.
 
-The **sestatus** command returns the SELinux status and the SELinux policy being used:
+    ```
+    <copy>
+    # This file controls the state of SELinux on the system.
+    # SELINUX= can take one of these three values:
+    #     enforcing - SELinux security policy is enforced.
+    #     permissive - SELinux prints warnings instead of enforcing.
+    #     disabled - No SELinux policy is loaded.
+    SELINUX=enforcing
+    # SELINUXTYPE= can take one of three two values:
+    #     targeted - Targeted processes are protected,
+    #     minimum - Modification of targeted policy. Only selected processes are protected.
+    #     mls - Multi Level Security protection.
+    SELINUXTYPE=targeted
+    </copy>
+    ```
+Setting the value of the SELINUX directive in the configuration file persists across reboots.
 
-```
-<copy>
-/usr/sbin/sestatus
-SELinux status: enabled
-SELinuxfs mount: /sys/fs/selinux
-SELinux root directory: /etc/selinux
-Loaded policy name: targeted
-Current mode: permissive
-Mode from config file: permissive
-Policy MLS status: enabled
-Policy deny_unknown status: allowed
-Memory protection checking: actual (secure)
-Max kernel policy version: 31
-</copy>
-```
+2. To check the status of SELinux:    
 
-**Installing AHF in Permissive or Enforcing Mode**
+    ```
+    <copy>
+    /usr/sbin/getenforce
+    Permissive
+    </copy>
+    ```
+The **getenforce** command returns **Enforcing**, **Permissive**, or **Disabled**.
+
+3. To check the status of SELinux and the policy being used:
+
+    ```
+    <copy>
+    /usr/sbin/sestatus
+    SELinux status: enabled
+    SELinuxfs mount: /sys/fs/selinux
+    SELinux root directory: /etc/selinux
+    Loaded policy name: targeted
+    Current mode: permissive
+    Mode from config file: permissive
+    Policy MLS status: enabled
+    Policy deny_unknown status: allowed
+    Memory protection checking: actual (secure)
+    Max kernel policy version: 31
+    </copy>
+    ```
+
+4. To unload the SELinux policy:
+
+    ```
+    <copy>
+    ahfctl unloadpolicy
+    Please wait while the policy is being removed, it might take couple of minutes.
+    Successfully removed Contexts and Policy
+    </copy>
+    ```
+
+**Install AHF in Permissive or Enforcing Mode:**
 
 AHF installer loads the policy and sets relevant contexts.
 
-**Installing AHF in Disabled Mode**
+1. To install AHF:
 
-AHF is installed successfully. However, later if you switch the mode to **Permissive** or **Enforcing**, then SELinux starts blocking the AHF processes.
+    ```
+    <copy>
+    ahf_setup
+    AHF Installer for Platform Linux Architecture x86_64
+    AHF Installation Log : /tmp/ahf_install_221000_2193173_2022_02_23-22_35_59.log
+    Starting Autonomous Health Framework (AHF) Installation
+    AHF Version: 22.1.0 Build Date: 202202230349
+    Default AHF Location : /opt/oracle.ahf
+    Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N
+    AHF Location : /opt/oracle.ahf
+    AHF Data Directory stores diagnostic collections and metadata.
+    AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
+    Please Enter AHF Data Directory : /opt/oracle.ahf
+    AHF Data Directory : /opt/oracle.ahf/data
 
-1. To run AHF, load the SELinux policy:
+    Do you want to add AHF Notification Email IDs ? [Y]|N : N
+    Extracting AHF to /opt/oracle.ahf
+    Configuring TFA Services
+    Discovering Nodes and Oracle Resources
+    Successfully generated certificates.
+    Starting TFA Services
+    Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service → /etc/systemd/system/oracle-tfa.service.
+    Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service → /etc/systemd/system/oracle-tfa.service.
+    .------------------------------------------------------------------------------------.
+    | Host         | Status of TFA | PID     | Port  | Version    | Build ID             |
+    +--------------+---------------+---------+-------+------------+----------------------+
+    | phoenix78312 | RUNNING       | 2194746 | 36707 | 22.1.0.0.0 | 22100020220223034920 |
+    '--------------+---------------+---------+-------+------------+----------------------'
+    Running TFA Inventory...
+    Adding default users to TFA Access list...
+    .----------------------------------------------------------.
+    |               Summary of AHF Configuration               |
+    +-----------------+----------------------------------------+
+    | Parameter       | Value                                  |
+    +-----------------+----------------------------------------+
+    | AHF Location    | /opt/oracle.ahf                        |
+    | TFA Location    | /opt/oracle.ahf/tfa                    |
+    | Orachk Location | /opt/oracle.ahf/orachk                 |
+    | Data Directory  | /opt/oracle.ahf/data                   |
+    | Repository      | /opt/oracle.ahf/data/repository        |
+    | Diag Directory  | /opt/oracle.ahf/data/phoenix78312/diag |
+    '-----------------+----------------------------------------'
+
+    Starting orachk scheduler from AHF ...
+    AHF binaries are available in /opt/oracle.ahf/bin
+    AHF is successfully installed
+    Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] :
+    Moving /tmp/ahf_install_221000_2193173_2022_02_23-22_35_59.log to /opt/oracle.ahf/data/phoenix78312/diag/ahf/
+    </copy>
+    ```
+2. To check if the policy is loaded successfully:
+
+    ```
+    <copy>
+    /usr/sbin/semodule -l | grep inittfa-policy
+    </copy>
+    ```
+
+**Install AHF in Disabled Mode**
+
+1. To install AHF:
+
+    ```
+    <copy>
+    ahf_setup
+    AHF Installer for Platform Linux Architecture x86_64
+    AHF Installation Log : /tmp/ahf_install_221000_16953_2022_02_23-14_43_58.log
+    Starting Autonomous Health Framework (AHF) Installation
+    AHF Version: 22.1.0 Build Date: 202202230349
+    Default AHF Location : /opt/oracle.ah
+    Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N :
+    AHF Location : /opt/oracle.ahf
+    AHF Data Directory stores diagnostic collections and metadata.
+    AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
+    Please Enter AHF Data Directory : /opt/oracle.ahf
+    AHF Data Directory : /opt/oracle.ahf/data
+    Do you want to add AHF Notification Email IDs ? [Y]|N : N
+    Extracting AHF to /opt/oracle.ahf
+    Configuring TFA Services
+    Discovering Nodes and Oracle Resources
+    Successfully generated certificates.
+    Starting TFA Services
+    Created symlink from /etc/systemd/system/multi-user.target.wants/oracle-tfa.service to /etc/systemd/system/oracle-tfa.service.
+    Created symlink from /etc/systemd/system/graphical.target.wants/oracle-tfa.service to /etc/systemd/system/oracle-tfa.service.
+    .------------------------------------------------------------------------------.
+    | Host     | Status of TFA | PID   | Port  | Version    | Build ID             |
+    +----------+---------------+-------+-------+------------+----------------------+
+    | den02lpa | RUNNING       | 18320 | 15889 | 22.1.0.0.0 | 22100020220223034920 |
+    '----------+---------------+-------+-------+------------+----------------------'
+    Running TFA Inventory...
+    Adding default users to TFA Access list...
+    .------------------------------------------------------.
+    |             Summary of AHF Configuration             |
+    +-----------------+------------------------------------+
+    | Parameter       | Value                              |
+    +-----------------+------------------------------------+
+    | AHF Location    | /opt/oracle.ahf                    |
+    | TFA Location    | /opt/oracle.ahf/tfa                |
+    | Orachk Location | /opt/oracle.ahf/orachk             |
+    | Data Directory  | /opt/oracle.ahf/data               |
+    | Repository      | /opt/oracle.ahf/data/repository    |
+    | Diag Directory  | /opt/oracle.ahf/data/den02lpa/diag |
+    '-----------------+------------------------------------'
+    Starting orachk scheduler from AHF ...
+    AHF binaries are available in /opt/oracle.ahf/bin
+    AHF is successfully installed
+    Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] :
+    Moving /tmp/ahf_install_221000_16953_2022_02_23-14_43_58.log to /opt/oracle.ahf/data/den02lpa/diag/ahf/
+    </copy>
+    ```
+2. To run AHF, load the SELinux policy:
 
     ```
     <copy>
@@ -429,7 +568,7 @@ AHF is installed successfully. However, later if you switch the mode to **Permis
     </copy>
     ```
 
-2. To check if the policy is loaded successfully:
+3. To check if the policy is loaded successfully:
 
     ```
     <copy>
@@ -437,15 +576,7 @@ AHF is installed successfully. However, later if you switch the mode to **Permis
     </copy>	 
     ```
 
-3. To unload the SELinux policy:
-
-    ```
-    <copy>
-    ahfctl unloadpolicy
-    Please wait while the policy is being removed, it might take couple of minutes.
-    Successfully removed Contexts and Policy
-    </copy>
-    ```
+**Note:** After installing AHF if you switch the mode to Permissive or Enforcing, then SELinux starts blocking the AHF processes. Reboot the system for the switch in mode to take effect.
 
 ## Learn More
 
