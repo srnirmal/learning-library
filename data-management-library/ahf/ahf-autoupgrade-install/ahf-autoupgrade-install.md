@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to install AHF either as **root** or as a non-root user as well as how to run AHF on SELinux-enabled systems.
+In this lab, you will learn how to install AHF either as **root** or as a non-root user. You will also learn how to run AHF on SELinux-enabled systems.
 
 Estimated Time: 30 minutes
 
@@ -49,7 +49,7 @@ If Oracle Autonomous Health Framework is already installed, then reinstalling pe
     ```
     <copy>./ahf_setup</copy>
     ```
-	  If you plan to run only Oracle ORAchk or Oracle EXAchk and do not want to run any Oracle Trace File Analyzer processes, then use the install option of **-extract -notfasetup**.
+    If you plan to run only Oracle ORAchk or Oracle EXAchk and do not want to run any Oracle Trace File Analyzer processes, then use the install options **-extract -notfasetup**.
 
     ```
     <copy>
@@ -74,7 +74,7 @@ If Oracle Autonomous Health Framework is already installed, then reinstalling pe
 
 	  The installation prompts you to do a local or cluster installation.
 
-	  Whether the installation is local or cluster-wide, the script configures Oracle Autonomous Health Framework for automatic startup. The implementation of auto-start is platform-dependent. Linux uses **init**, or an **init** replacement, such as **upstart** or **systemd** and Microsoft Windows uses a Windows service.
+	  Whether the installation is local or cluster-wide, the installer script configures Oracle Autonomous Health Framework for automatic startup. The implementation of auto-start is platform-dependent. Linux uses **init**, or an **init** replacement, such as **upstart** or **systemd** and Microsoft Windows uses a Windows service.
 
 	  The installer prompts you to specify one or more email addresses of the recipients who can receive diagnostic notifications. Oracle Autonomous Health Framework notifies the recipients with the results of Oracle ORAchk and Oracle EXAchk compliance checking, or when Oracle Autonomous Health Framework detects significant faults.
 
@@ -341,7 +341,7 @@ The daemon restarts at 1 am every day to discover environment changes. The daemo
 
 ## Task 3: Install AHF on Linux or UNIX as Non-root User in Non-Daemon Mode
 
-If you are unable to install as **root**, then install Oracle Autonomous Health Framework as the Oracle Home owner.
+If you are unable to install as **root**, then install Oracle Autonomous Health Framework as the **Oracle home** owner.
 
 **Note:**
 - Perl version 5.10 or later is required to install Oracle Autonomous Health Framework.
@@ -352,24 +352,24 @@ Oracle Autonomous Health Framework has reduced capabilities when you install it 
 - Collect diagnostics from remote hosts
 - Collect files that are not readable by the Oracle Home owner, for example, **/var/log/messages**, or certain Oracle Grid Infrastructure logs
 
-1. To install as the Oracle Home owner, use the **–ahf_loc** option, and optionally specify the **-notfasetup** option to prevent the running of any Oracle Trace File Analyzer processes.
+1. To install as the **Oracle home** owner, use the **–ahf_loc** option, and optionally specify the **-notfasetup** option to prevent the running of any Oracle Trace File Analyzer processes.
 
     ```
     <copy>
-	   ahf_setup -ahf_loc /ahf -notfasetup
-	AHF Installer for Platform Linux Architecture x86_64
-	AHF Installation Log : /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log
-	Starting Autonomous Health Framework (AHF) Installation
-	AHF Version: 22.1.0 Build Date: 202201302324
-	AHF Location : /ahf/oracle.ahf
-	AHF Data Directory : /ahf/oracle.ahf/data
-	Extracting AHF to /ahf/oracle.ahf
-	AHF is deployed at /ahf/oracle.ahf
-	ORAchk is available at /ahf/oracle.ahf/bin/orachk
-	AHF binaries are available in /ahf/oracle.ahf/bin
-	AHF is successfully installed
-	Moving /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log to /ahf/oracle.ahf/data/den02mwa/diag/ahf/
-	  </copy>
+    ahf_setup -ahf_loc /ahf -notfasetup
+    AHF Installer for Platform Linux Architecture x86_64
+    AHF Installation Log : /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log
+    Starting Autonomous Health Framework (AHF) Installation
+    AHF Version: 22.1.0 Build Date: 202201302324
+    AHF Location : /ahf/oracle.ahf
+    AHF Data Directory : /ahf/oracle.ahf/data
+    Extracting AHF to /ahf/oracle.ahf
+    AHF is deployed at /ahf/oracle.ahf
+    ORAchk is available at /ahf/oracle.ahf/bin/orachk
+    AHF binaries are available in /ahf/oracle.ahf/bin
+    AHF is successfully installed
+    Moving /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log to /ahf/oracle.ahf/data/den02mwa/diag/ahf/
+    </copy>
     ```
 
 	For more information, run **ahf_setup -h**.
