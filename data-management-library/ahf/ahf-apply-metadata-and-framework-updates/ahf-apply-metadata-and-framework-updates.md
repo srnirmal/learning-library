@@ -81,7 +81,7 @@ Upgrading AHF using the **ahf_setup script** automatically deletes the backup di
 
     ```
     <copy>
-    ahfctl deleteupdatebackup -timestamp 20220130
+    ahfctl deleteupdatebackup -updateid 20220130
     Deleted metadata backup directory for: /opt/oracle.ahf/data/work/.exachk_patch_directory/.20220130_metadata_bkp
     </copy>
     ```
