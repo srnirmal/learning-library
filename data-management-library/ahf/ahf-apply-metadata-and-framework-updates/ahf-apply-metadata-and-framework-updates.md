@@ -17,7 +17,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* AHF install user privileges to run the **applyupdate**, **queryupdate**, **rollbackupdate**, and **deletebackup** commands.
+* AHF install user privileges to run the **applyupdate**, **queryupdate**, **rollbackupdate**, and **deleteupdatebackup** commands.
 
 ## Task 1: Apply AHF Framework and Metadata Updates
 
@@ -81,7 +81,7 @@ Upgrading AHF using the **ahf_setup script** automatically deletes the backup di
 
     ```
     <copy>
-    ahfctl deletebackup -timestamp 20220130
+    ahfctl deleteupdatebackup -timestamp 20220130
     Deleted metadata backup directory for: /opt/oracle.ahf/data/work/.exachk_patch_directory/.20220130_metadata_bkp
     </copy>
     ```
@@ -91,7 +91,7 @@ Upgrading AHF using the **ahf_setup script** automatically deletes the backup di
 * [ahfctl applyupdate](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-applyupdate.html#GUID-1C582851-0138-419D-8CBC-D9F83B97A6AC)
 * [ahfctl queryupdate](https://docs-uat.us.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-queryupdate.html#GUID-C02F4087-184F-4EF7-B94F-8987F9E192B2)
 * [ahfctl rollbackupdate](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-rollbackupdate.html#GUID-63CC64FF-3D4D-425B-9484-6237D3AC3FD0)
-* [ahfctl deletebackup](https://docs-uat.us.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-deletebackup.html#GUID-154BA5AA-40EF-45BF-8154-B4000718A35D)
+* [ahfctl deleteupdatebackup](https://docs-uat.us.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/ahfctl-deletebackup.html#GUID-154BA5AA-40EF-45BF-8154-B4000718A35D)
 
 ## Acknowledgements
 * **Author** - Nirmal Kumar
