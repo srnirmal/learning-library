@@ -16,6 +16,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+* Oracle recommends install AHF as the **root** user. For this workshop, run the **sudo su** command to gain **root** access.
 * Perl version 5.10 or later installed.
 
 ## Task 1: Install AHF on Linux or UNIX as root User in Daemon Mode
@@ -26,7 +27,17 @@ Oracle Autonomous Health Framework maintains Access Control Lists (ACLs) to dete
 
 If Oracle Autonomous Health Framework is already installed, then reinstalling performs an upgrade to the existing location.
 
-1. Download and copy the **AHF-LINUX_<*version*>.zip** file to the required machine, and then unzip it.
+1. Download and copy the **AHF-LINUX_<*version*>.zip** file to the required machine, and then unzip it in in **/tmp/ahf22.1.0**.
+
+    ```
+    unzip /home/opc/Downloads/AHF-LINUX_v22.1.0.zip -d /tmp/ahf22.1.0
+    Archive:  /home/opc/Downloads/AHF-LINUX_v22.1.0.zip
+      inflating: /tmp/ahf22.1.0/ahf_setup
+      extracting: /tmp/ahf22.1.0/ahf_setup.dat
+      inflating: /tmp/ahf22.1.0/README.txt
+      inflating: /tmp/ahf22.1.0/oracle-tfa.pub
+    </copy>
+    ```
 
 2. To ensure that the environment has been set correctly, enter the following commands:
 
