@@ -24,6 +24,46 @@ In this lab, you will:
 This lab assumes you have:
 * You need AHF installed user privileges or **root** access to run **getupgrade**, **setupgrade**, **unsetupgrade**, and **upgrade** commands.
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
+* Installed AHF version 21.4.3. If you have already installed 22.1, then you must uninstall it.
+
+1. To check if AHF is already installed:
+
+	```
+	<copy>
+	tfactl status
+	</copy>
+	```
+2. To uninstall AHF:
+
+	```
+	<copy>
+	ahfctl uninstall -deleterepo -silent
+	Starting AHF Uninstall
+	AHF will be uninstalled on: ahf2
+
+	Stopping AHF service on local node ahf2...
+	Sleeping for 10 seconds...
+
+	Stopping TFA Support Tools...
+
+
+	Removing AHF setup on ahf2:
+	Removing /ahf/oracle.ahf/rpms
+	Removing /ahf/oracle.ahf/jre
+	Removing /ahf/oracle.ahf/common
+	Removing /ahf/oracle.ahf/bin
+	Removing /ahf/oracle.ahf/python
+	Removing /ahf/oracle.ahf/analyzer
+	Removing /ahf/oracle.ahf/tfa
+	Removing /ahf/oracle.ahf/chm
+	Removing /ahf/oracle.ahf/orachk
+	Removing /ahf/oracle.ahf/ahf
+	Removing /ahf/oracle.ahf/data/ahf2
+	Removing /ahf/oracle.ahf/install.properties
+	Removing /ahf/oracle.ahf/data/repository
+	Removing /ahf/oracle.ahf/data
+	</copy>
+	```
 
 ### Operating Systems Supported to Upgrade AHF Automatically
 
