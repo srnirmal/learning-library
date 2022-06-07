@@ -23,7 +23,7 @@ In this lab, you will:
 
 * You need AHF installed user privileges or **root** access to run **getupgrade**, **setupgrade**, **unsetupgrade**, and **upgrade** commands.
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
-* Installed AHF version 21.4.3. You can only upgrade from 21.4.3 to 22.1 so uninstall if you have installed any previous versions of AHF.
+* AHF version 21.4.3. You can only upgrade from 21.4.3 to 22.1 so uninstall if you have installed 21.4.3 or any older versions of AHF.
 
 	1. To check if AHF is already installed:
 
@@ -67,7 +67,7 @@ In this lab, you will:
 		Removing /ahf/oracle.ahf/data
 		</copy>
 		```
-	3. To unzip the **ahf\_setup** installer script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **tmp** directory:
+	3. To unzip the **ahf\_setup** installer script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **/tmp** directory:
 
 		```
 		<copy>
