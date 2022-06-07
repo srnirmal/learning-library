@@ -27,12 +27,12 @@ You must apply metadata and framework updates to all cluster nodes.
 
     ```
     <copy>
-    ahfctl applyupdate -updatefile /tmp/ahf_data_20220203.zip
-    Updated file /opt/oracle.ahf/exachk/.cgrep/collections.dat
-    Updated file /opt/oracle.ahf/exachk/rules.dat
-    Updated file /opt/oracle.ahf/exachk/.cgrep/versions.dat
-    Updated file /opt/oracle.ahf/exachk/messages/check_messages.json
-    Data files updated to 20220203 from 20211220
+    ahfctl applyupdate -updatefile /home/opc/Downloads/ahf_data_20220602.zip
+    Updated file /opt/oracle.ahf/orachk/.cgrep/collections.dat
+    Updated file /opt/oracle.ahf/orachk/rules.dat
+    Updated file /opt/oracle.ahf/orachk/.cgrep/versions.dat
+    Updated file /opt/oracle.ahf/orachk/messages/check_messages.json
+    Data files updated to 20220602 from 20220516
     </copy>
     ```
 
@@ -47,9 +47,9 @@ To verify if the metadata and framework updates were applied to all nodes in a c
     ```
     <copy>
     ahfctl queryupdate -all
-    AHF Metadata Update: 20220203
+    AHF Metadata Update: 20220602
     Status: Applied
-    Applied on: Fri Feb 4 00:47:00 2022
+    Applied on: Mon Jun  6 00:23:14 2022
     </copy>
     ```
 
@@ -63,9 +63,9 @@ To rollback the metadata and framework updates applied to all nodes in a cluster
 
     ```
     <copy>
-    ahfctl rollbackupdate -updateid 20220203
-    Data files with timestamp 20220203 identified. Rolling back the files to Production version 20211220
-    Rolled back the data files 20220203 to Production version 20211220
+    ahfctl rollbackupdate -updateid 20220602
+    Data files with timestamp 20220602 identified. Rolling back the files to Production version 20220516
+    Rolled back the data files 20220602 to Production version 20220516
 	  </copy>
     ```
 
@@ -81,8 +81,8 @@ Upgrading AHF using the **ahf_setup script** automatically deletes the backup di
 
     ```
     <copy>
-    ahfctl deleteupdatebackup -updateid 20220130
-    Deleted metadata backup directory for: /opt/oracle.ahf/data/work/.exachk_patch_directory/.20220130_metadata_bkp
+    ahfctl deleteupdatebackup -updateid 20220602
+    No metadata update applied.
     </copy>
     ```
 

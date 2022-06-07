@@ -25,74 +25,74 @@ In this lab, you will:
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
 * Installed AHF version 21.4.3. You can only upgrade from 21.4.3 to 22.1 so uninstall if you have installed any previous versions of AHF.
 
-1. To check if AHF is already installed:
+	1. To check if AHF is already installed:
 
-	```
-	<copy>
-	tfactl status
-	.----------------------------------------------------------------------------------.
-	| Host       | Status of TFA | PID     | Port  | Version    | Build ID             |
-	+------------+---------------+---------+-------+------------+----------------------+
-	| iaddbfan38 | RUNNING       | 1039258 | 39435 | 21.3.6.0.0 | 21360020220202214733 |
-	'------------+---------------+---------+-------+------------+----------------------'
-	</copy>
-	```
-2. To uninstall AHF:
+		```
+		<copy>
+		tfactl status
+		.----------------------------------------------------------------------------------.
+		| Host       | Status of TFA | PID     | Port  | Version    | Build ID             |
+		+------------+---------------+---------+-------+------------+----------------------+
+		| iaddbfan38 | RUNNING       | 1039258 | 39435 | 21.3.6.0.0 | 21360020220202214733 |
+		'------------+---------------+---------+-------+------------+----------------------'
+		</copy>
+		```
+	2. To uninstall AHF:
 
-	```
-	<copy>
-	ahfctl uninstall -deleterepo -silent
-	Starting AHF Uninstall
-	AHF will be uninstalled on: ahf2
+		```
+		<copy>
+		ahfctl uninstall -deleterepo -silent
+		Starting AHF Uninstall
+		AHF will be uninstalled on: ahf2
 
-	Stopping AHF service on local node ahf2...
-	Sleeping for 10 seconds...
+		Stopping AHF service on local node ahf2...
+		Sleeping for 10 seconds...
 
-	Stopping TFA Support Tools...
+		Stopping TFA Support Tools...
 
-	Removing AHF setup on ahf2:
-	Removing /ahf/oracle.ahf/rpms
-	Removing /ahf/oracle.ahf/jre
-	Removing /ahf/oracle.ahf/common
-	Removing /ahf/oracle.ahf/bin
-	Removing /ahf/oracle.ahf/python
-	Removing /ahf/oracle.ahf/analyzer
-	Removing /ahf/oracle.ahf/tfa
-	Removing /ahf/oracle.ahf/chm
-	Removing /ahf/oracle.ahf/orachk
-	Removing /ahf/oracle.ahf/ahf
-	Removing /ahf/oracle.ahf/data/ahf2
-	Removing /ahf/oracle.ahf/install.properties
-	Removing /ahf/oracle.ahf/data/repository
-	Removing /ahf/oracle.ahf/data
-	</copy>
-	```
-3. To unzip **ahf\_setup** script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **tmp** directory:
+		Removing AHF setup on ahf2:
+		Removing /ahf/oracle.ahf/rpms
+		Removing /ahf/oracle.ahf/jre
+		Removing /ahf/oracle.ahf/common
+		Removing /ahf/oracle.ahf/bin
+		Removing /ahf/oracle.ahf/python
+		Removing /ahf/oracle.ahf/analyzer
+		Removing /ahf/oracle.ahf/tfa
+		Removing /ahf/oracle.ahf/chm
+		Removing /ahf/oracle.ahf/orachk
+		Removing /ahf/oracle.ahf/ahf
+		Removing /ahf/oracle.ahf/data/ahf2
+		Removing /ahf/oracle.ahf/install.properties
+		Removing /ahf/oracle.ahf/data/repository
+		Removing /ahf/oracle.ahf/data
+		</copy>
+		```
+	3. To unzip the **ahf\_setup** installer script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **tmp** directory:
 
-	```
-	<copy>
-	ls -l  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
-	-rw-r--r--. 1 root root 373987699 May 31 02:03 /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
-	</copy>
-	```
+		```
+		<copy>
+		ls -l  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+		-rw-r--r--. 1 root root 373987699 May 31 02:03 /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+		</copy>
+		```
 
-	```
-	<copy>
-	unzip /home/opc/Downloads/AHF-LINUX_v21.4.3.zip -d /tmp/ahf21.4.3
-	Archive:  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+		```
+		<copy>
+		unzip /home/opc/Downloads/AHF-LINUX_v21.4.3.zip -d /tmp/ahf21.4.3
+		Archive:  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
 	  inflating: /tmp/ahf21.4.3/ahf_setup
-	 extracting: /tmp/ahf21.4.3/ahf_setup.dat
+	 	extracting: /tmp/ahf21.4.3/ahf_setup.dat
 	  inflating: /tmp/ahf21.4.3/README.txt
 	  inflating: /tmp/ahf21.4.3/oracle-tfa.pub
-	</copy>
-	```
-4. To install AHF 21.4.3:
+		</copy>
+		```
+	4. To install AHF 21.4.3:
 
-	```
-	<copy>
-	/tmp/ahf21.4.3/ahf_setup
-	</copy>
-	```
+		```
+		<copy>
+		/tmp/ahf21.4.3/ahf_setup
+		</copy>
+		```
 
 ### Operating Systems Supported to Upgrade AHF Automatically
 
@@ -110,6 +110,10 @@ Autoupgrade of AHF by non-root users is supported only if the existing installat
 
 ### Upgrading AHF on Local File System, ACFS, and NFS
 You can upgrade AHF on the local file system, Oracle Automatic Storage Management Cluster File System (Oracle ACFS), and Network File System (NFS).
+
+**Note**
+* The scope of this workshop is limited to upgrading AHF on the local file system.
+* If the upgrade output is not displayed, wait for 3-5 minutes and then check the **/opt/oracle.ahf/data/*hostname*/diag/ahf/ahf\_install\_*date*>.log** file.
 
 **Local File System**
 
@@ -358,7 +362,7 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 
 ## Task 1: Upgrade AHF from Software Stage Location
 
-1. Ensure that you have an older version of AHF installed.
+1. Ensure that you have an older version of AHF (preferably 21.4.3) installed.
 
 2. Configure the software storage location where the new version of AHF zip file exists.
 
