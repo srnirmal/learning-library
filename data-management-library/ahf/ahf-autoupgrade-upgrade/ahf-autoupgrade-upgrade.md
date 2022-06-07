@@ -30,6 +30,11 @@ In this lab, you will:
 	```
 	<copy>
 	tfactl status
+	.----------------------------------------------------------------------------------.
+	| Host       | Status of TFA | PID     | Port  | Version    | Build ID             |
+	+------------+---------------+---------+-------+------------+----------------------+
+	| iaddbfan38 | RUNNING       | 1039258 | 39435 | 21.3.6.0.0 | 21360020220202214733 |
+	'------------+---------------+---------+-------+------------+----------------------'
 	</copy>
 	```
 2. To uninstall AHF:
@@ -62,7 +67,7 @@ In this lab, you will:
 	Removing /ahf/oracle.ahf/data
 	</copy>
 	```
-3. Unzip **/home/opc/Downloads/AHF-LINUX_v21.4.3.zip** in the **tmp** directory:
+3. To unzip **ahf\_setup** script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **tmp** directory:
 
 	```
 	<copy>
@@ -79,6 +84,13 @@ In this lab, you will:
 	 extracting: /tmp/ahf21.4.3/ahf_setup.dat
 	  inflating: /tmp/ahf21.4.3/README.txt
 	  inflating: /tmp/ahf21.4.3/oracle-tfa.pub
+	</copy>
+	```
+4. To install AHF 21.4.3:
+
+	```
+	<copy>
+	/tmp/ahf21.4.3/ahf_setup
 	</copy>
 	```
 
