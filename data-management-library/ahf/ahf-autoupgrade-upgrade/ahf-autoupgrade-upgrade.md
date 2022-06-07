@@ -21,10 +21,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you have:
 * You need AHF installed user privileges or **root** access to run **getupgrade**, **setupgrade**, **unsetupgrade**, and **upgrade** commands.
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
-* Installed AHF version 21.4.3. If you have already installed 22.1, then you must uninstall it.
+* Installed AHF version 21.4.3. You can only upgrade from 21.4.3 to 22.1 so uninstall if you have installed any previous versions of AHF.
 
 1. To check if AHF is already installed:
 
@@ -46,7 +45,6 @@ This lab assumes you have:
 
 	Stopping TFA Support Tools...
 
-
 	Removing AHF setup on ahf2:
 	Removing /ahf/oracle.ahf/rpms
 	Removing /ahf/oracle.ahf/jre
@@ -62,6 +60,25 @@ This lab assumes you have:
 	Removing /ahf/oracle.ahf/install.properties
 	Removing /ahf/oracle.ahf/data/repository
 	Removing /ahf/oracle.ahf/data
+	</copy>
+	```
+3. Unzip **/home/opc/Downloads/AHF-LINUX_v21.4.3.zip** in the **tmp** directory:
+
+	```
+	<copy>
+	ls -l  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+	-rw-r--r--. 1 root root 373987699 May 31 02:03 /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+	</copy>
+	```
+
+	```
+	<copy>
+	unzip /home/opc/Downloads/AHF-LINUX_v21.4.3.zip -d /tmp/ahf21.4.3
+	Archive:  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+	  inflating: /tmp/ahf21.4.3/ahf_setup
+	 extracting: /tmp/ahf21.4.3/ahf_setup.dat
+	  inflating: /tmp/ahf21.4.3/README.txt
+	  inflating: /tmp/ahf21.4.3/oracle-tfa.pub
 	</copy>
 	```
 

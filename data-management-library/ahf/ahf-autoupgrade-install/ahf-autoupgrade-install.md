@@ -193,15 +193,16 @@ Oracle Autonomous Health Framework has reduced capabilities when you install it 
 - Collect diagnostics from remote hosts
 - Collect files that are not readable by the Oracle Home owner, for example, **/var/log/messages**, or certain Oracle Grid Infrastructure logs
 
-1. To install as the **Oracle home** owner, use the **–ahf_loc** option, and optionally specify the **-notfasetup** option to prevent the running of any Oracle Trace File Analyzer processes.
+1. To install as the **Oracle home** owner (**opc** user), use the **–ahf_loc** option, and optionally specify the **-notfasetup** option to prevent the running of any Oracle Trace File Analyzer processes.
 
     ```
     <copy>
-    ahf_setup -ahf_loc /ahf -notfasetup
+    /tmp/ahf22.1.0/ahf_setup -ahf_loc /ahf -notfasetup
+
     AHF Installer for Platform Linux Architecture x86_64
-    AHF Installation Log : /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log
+    AHF Installation Log : /tmp/ahf_install_221000_540223_2022_06_06-20_36_32.log
     Starting Autonomous Health Framework (AHF) Installation
-    AHF Version: 22.1.0 Build Date: 202201302324
+    AHF Version: 22.1.0 Build Date: 202205292144
     AHF Location : /ahf/oracle.ahf
     AHF Data Directory : /ahf/oracle.ahf/data
     Extracting AHF to /ahf/oracle.ahf
@@ -209,9 +210,24 @@ Oracle Autonomous Health Framework has reduced capabilities when you install it 
     ORAchk is available at /ahf/oracle.ahf/bin/orachk
     AHF binaries are available in /ahf/oracle.ahf/bin
     AHF is successfully installed
-    Moving /tmp/ahf_install_221000_101841_2022_02_02-13_36_44.log to /ahf/oracle.ahf/data/den02mwa/diag/ahf/
+    Moving /tmp/ahf_install_221000_540223_2022_06_06-20_36_32.log to /ahf/oracle.ahf/data/ahf2/diag/ahf/
     </copy>
     ```
+
+    The installer script throws an error if you install AHF as the **root** user.
+
+    ```
+    <copy>
+    /tmp/ahf22.1.0/ahf_setup -ahf_loc /ahf -notfasetup -extract
+    AHF Installer for Platform Linux Architecture x86_64
+    AHF Installation Log : /tmp/ahf_install_221000_539881_2022_06_06-20_36_05.log
+    Starting Autonomous Health Framework (AHF) Installation
+    AHF Version: 22.1.0 Build Date: 202205292144
+    AHF Location : /ahf/oracle.ahf
+    [ERROR] : AHF-00014: AHF Location /ahf/oracle.ahf is not owned by root in directory hierarchy
+    </copy>
+    ```
+
 
 	For more information, run **ahf_setup -h**.
 
@@ -364,6 +380,8 @@ AHF installer loads the policy and sets relevant contexts.
 **Install AHF in Disabled Mode**
 
 In Disabled mode, AHF does not load the SELinux policy.
+
+**Note:** Do not use this option. When you try to install AHF in Disabled mode, you have to restart the machine. This is not possible in this lab environment.
 
 1. To check the status of SELinux and the policy being used:
 
