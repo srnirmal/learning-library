@@ -507,13 +507,15 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 
 ## Task 2: Upgrade AHF from REST Endpoints (Object Store)
 
+**Note** You can skip the following steps if you have already configured the REST Endpoint (Object Store).
+
 1. Configure REST endpoints (Object Store).
 
 	```
 	<copy>
 	ahfctl setupload -name test_ep -type https
 
-	Enter test_ep.https.user :  chunmei.zhang@oracle.com
+	Enter test_ep.https.user :  testuser@oracle.com
 	Enter test_ep.https.password :
 	Enter test_ep.https.url : https://swiftobjectstorage.r1.oracleiaas.com/v1/dbaasimage/CDCJH
 	Successfully synced AHF configuration
