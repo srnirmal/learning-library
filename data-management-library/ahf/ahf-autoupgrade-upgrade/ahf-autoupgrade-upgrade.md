@@ -25,75 +25,6 @@ In this lab, you will:
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
 * AHF version 21.4.3. You can only upgrade AHF from 21.4.3 to 22.1 so uninstall if you have any older versions of AHF.
 
-	1. To check if AHF is already installed:
-
-		```
-		<copy>
-		tfactl status
-		.----------------------------------------------------------------------------------.
-		| Host       | Status of TFA | PID     | Port  | Version    | Build ID             |
-		+------------+---------------+---------+-------+------------+----------------------+
-		| iaddbfan38 | RUNNING       | 1039258 | 39435 | 21.3.6.0.0 | 21360020220202214733 |
-		'------------+---------------+---------+-------+------------+----------------------'
-		</copy>
-		```
-	2. To uninstall AHF:
-
-		```
-		<copy>
-		ahfctl uninstall -deleterepo -silent
-		Starting AHF Uninstall
-		AHF will be uninstalled on: ahf2
-
-		Stopping AHF service on local node ahf2...
-		Sleeping for 10 seconds...
-
-		Stopping TFA Support Tools...
-
-		Removing AHF setup on ahf2:
-		Removing /ahf/oracle.ahf/rpms
-		Removing /ahf/oracle.ahf/jre
-		Removing /ahf/oracle.ahf/common
-		Removing /ahf/oracle.ahf/bin
-		Removing /ahf/oracle.ahf/python
-		Removing /ahf/oracle.ahf/analyzer
-		Removing /ahf/oracle.ahf/tfa
-		Removing /ahf/oracle.ahf/chm
-		Removing /ahf/oracle.ahf/orachk
-		Removing /ahf/oracle.ahf/ahf
-		Removing /ahf/oracle.ahf/data/ahf2
-		Removing /ahf/oracle.ahf/install.properties
-		Removing /ahf/oracle.ahf/data/repository
-		Removing /ahf/oracle.ahf/data
-		</copy>
-		```
-	3. To unzip the **ahf\_setup** installer script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **/tmp** directory:
-
-		```
-		<copy>
-		ls -l  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
-		-rw-r--r--. 1 root root 373987699 May 31 02:03 /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
-		</copy>
-		```
-
-		```
-		<copy>
-		unzip /home/opc/Downloads/AHF-LINUX_v21.4.3.zip -d /tmp/ahf21.4.3
-		Archive:  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
-	  inflating: /tmp/ahf21.4.3/ahf_setup
-	 	extracting: /tmp/ahf21.4.3/ahf_setup.dat
-	  inflating: /tmp/ahf21.4.3/README.txt
-	  inflating: /tmp/ahf21.4.3/oracle-tfa.pub
-		</copy>
-		```
-	4. To install AHF 21.4.3:
-
-		```
-		<copy>
-		/tmp/ahf21.4.3/ahf_setup
-		</copy>
-		```
-
 ### Operating Systems Supported to Upgrade AHF Automatically
 
 Automatic upgrade is supported on:
@@ -359,8 +290,78 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 	-rwxr-xr-x+  1 root root  392587026 Mar  9 01:55 ahf_setup
 	</copy>
 	```
+## Task 1: Uninstall an Older Version of AHF and Install AHF 21.4.3
 
-## Task 1: Upgrade AHF from Software Stage Location
+1. To check if AHF is already installed:
+
+	```
+	<copy>
+	tfactl status
+	.----------------------------------------------------------------------------------.
+	| Host       | Status of TFA | PID     | Port  | Version    | Build ID             |
+	+------------+---------------+---------+-------+------------+----------------------+
+	| iaddbfan38 | RUNNING       | 1039258 | 39435 | 21.3.6.0.0 | 21360020220202214733 |
+	'------------+---------------+---------+-------+------------+----------------------'
+	</copy>
+	```
+2. To uninstall AHF:
+
+	```
+	<copy>
+	ahfctl uninstall -deleterepo -silent
+	Starting AHF Uninstall
+	AHF will be uninstalled on: ahf2
+
+	Stopping AHF service on local node ahf2...
+	Sleeping for 10 seconds...
+
+	Stopping TFA Support Tools...
+
+	Removing AHF setup on ahf2:
+	Removing /ahf/oracle.ahf/rpms
+	Removing /ahf/oracle.ahf/jre
+	Removing /ahf/oracle.ahf/common
+	Removing /ahf/oracle.ahf/bin
+	Removing /ahf/oracle.ahf/python
+	Removing /ahf/oracle.ahf/analyzer
+	Removing /ahf/oracle.ahf/tfa
+	Removing /ahf/oracle.ahf/chm
+	Removing /ahf/oracle.ahf/orachk
+	Removing /ahf/oracle.ahf/ahf
+	Removing /ahf/oracle.ahf/data/ahf2
+	Removing /ahf/oracle.ahf/install.properties
+	Removing /ahf/oracle.ahf/data/repository
+	Removing /ahf/oracle.ahf/data
+	</copy>
+	```
+3. To unzip the **ahf\_setup** installer script, **/home/opc/Downloads/AHF-LINUX\_v21.4.3.zip** in the **/tmp** directory:
+
+	```
+	<copy>
+	ls -l  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+	-rw-r--r--. 1 root root 373987699 May 31 02:03 /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+	</copy>
+	```
+
+	```
+	<copy>
+	unzip /home/opc/Downloads/AHF-LINUX_v21.4.3.zip -d /tmp/ahf21.4.3
+	Archive:  /home/opc/Downloads/AHF-LINUX_v21.4.3.zip
+	inflating: /tmp/ahf21.4.3/ahf_setup
+	extracting: /tmp/ahf21.4.3/ahf_setup.dat
+	inflating: /tmp/ahf21.4.3/README.txt
+	inflating: /tmp/ahf21.4.3/oracle-tfa.pub
+	</copy>
+	```
+4. To install AHF 21.4.3:
+
+	```
+	<copy>
+	/tmp/ahf21.4.3/ahf_setup
+	</copy>
+	```
+
+## Task 2: Upgrade AHF from Software Stage Location
 
 1. Ensure that you have an older version of AHF (preferably 21.4.3) installed.
 
@@ -505,7 +506,7 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 	</copy>
 	```
 
-## Task 2: Upgrade AHF from REST Endpoints (Object Store)
+## Task 3: Upgrade AHF from REST Endpoints (Object Store)
 
 **Note** You can skip the following steps if you have already configured the REST Endpoint (Object Store) or if you do not have a REST Endpoint.
 
@@ -568,7 +569,7 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 
 **Note:** To run the upgrade, **test\_ep** upload configuration must contain the **AHF-LINUX\_v22.2.0.zip** file. To check if this file exists in the object storage, run the **curl get** command.
 
-## Task 3: Download AHF Installer Zip File from MOS
+## Task 4: Download AHF Installer Zip File from MOS
 
 If a new version of AHF is not found either at the software stage location or at Rest Endpoints (Object Store), then download AHF from MOS to software stage, and then upgrade.
 
@@ -594,7 +595,7 @@ If a new version of AHF is not found either at the software stage location or at
 	AHF-LINUX_v21.1.0.zip successfully downloaded at /opt/oracle.ahf /opt/oracle.ahf/AHF-LINUX_v21.1.0.zip successfully extracted at /opt/oracle.ahf AHF software signature has been validated successfully
 	</copy>
 	```
-## Task 4: Troubleshoot AHF Download from MOS
+## Task 5: Troubleshoot AHF Download from MOS
 
 **Description:** AHF download from MOS fails with the following error:
 
@@ -613,7 +614,7 @@ An error has occurred while downloading AHF from MOS. Please try again!
 	tfactl set tracelevel=MAIN:DEBUG
 	</copy>
 	```
-## Task 5: Unset Upgrade Configuration
+## Task 6: Unset Upgrade Configuration
 
 Run the **ahfctl unsetupgrade** command to unset a specific upgrade parameter or all of the upgrade parameters.
 
@@ -640,7 +641,7 @@ Run the **ahfctl unsetupgrade** command to unset a specific upgrade parameter or
 	</copy>
 	```
 
-## Task 6: Disable Automatic upgrade
+## Task 7: Disable Automatic upgrade
 
 You can disable **autoupgrade** if you want to upgrade AHF manually.
 
