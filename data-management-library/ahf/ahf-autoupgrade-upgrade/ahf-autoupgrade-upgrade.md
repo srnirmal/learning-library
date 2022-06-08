@@ -507,7 +507,7 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 
 ## Task 2: Upgrade AHF from REST Endpoints (Object Store)
 
-**Note** You can skip the following steps if you have already configured the REST Endpoint (Object Store).
+**Note** You can skip the following steps if you have already configured the REST Endpoint (Object Store) or if you do not have a REST Endpoint.
 
 1. Configure REST endpoints (Object Store).
 
