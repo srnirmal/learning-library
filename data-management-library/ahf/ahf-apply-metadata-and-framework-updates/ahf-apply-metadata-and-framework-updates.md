@@ -95,5 +95,5 @@ Upgrading AHF using the **ahf_setup script** automatically deletes the backup di
 
 ## Acknowledgements
 * **Author** - Nirmal Kumar
-* **Contributors** -  Sarahi Partida, Girdhari Ghantiyala, Anuradha Chepuri
+* **Contributors** -  Sarahi Partida, Robert Pastijn, Girdhari Ghantiyala, Anuradha Chepuri
 * **Last Updated By/Date** - Nirmal Kumar, June 2022

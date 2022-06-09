@@ -666,5 +666,5 @@ You can disable **autoupgrade** if you want to upgrade AHF manually.
 
 ## Acknowledgements
 * **Author** - Nirmal Kumar
-* **Contributors** -  Sarahi Partida, Girdhari Ghantiyala, Anuradha Chepuri
+* **Contributors** -  Sarahi Partida, Robert Pastijn, Girdhari Ghantiyala, Anuradha Chepuri
 * **Last Updated By/Date** - Nirmal Kumar, June 2022

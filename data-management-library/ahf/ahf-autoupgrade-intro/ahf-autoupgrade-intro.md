@@ -20,6 +20,7 @@ In this lab, you will:
 * Upgrade AHF from Software Stage Location
 * Upgrade AHF from REST endpoints (Object Store)
 * Upgrade AHF from MOS
+* Apply AHF Framework and Metadata Updates
 
 ### Prerequisites
 
@@ -39,5 +40,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Nirmal Kumar
-* **Contributors** -  Sarahi Partida, Girdhari Ghantiyala, Anuradha Chepuri
+* **Contributors** -  Sarahi Partida, Robert Pastijn, Girdhari Ghantiyala, Anuradha Chepuri
 * **Last Updated By/Date** - Nirmal Kumar, June 2022

@@ -16,7 +16,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* Oracle recommends install AHF as the **root** user. For this workshop, run the **sudo su** command to gain **root** access.
+* Oracle recommends installing AHF as the **root** user. For this workshop, run the **sudo su** command to gain **root** access.
 * Perl version 5.10 or later installed.
 
 ## Task 1: Install AHF on Linux or UNIX as root User in Daemon Mode
@@ -485,5 +485,5 @@ After installing AHF if you switch the mode to Permissive or Enforcing, then SEL
 
 ## Acknowledgements
 * **Author** - Nirmal Kumar
-* **Contributors** -  Sarahi Partida, Girdhari Ghantiyala, Anuradha Chepuri
+* **Contributors** -  Sarahi Partida, Robert Pastijn, Girdhari Ghantiyala, Anuradha Chepuri
 * **Last Updated By/Date** - Nirmal Kumar, June 2022
