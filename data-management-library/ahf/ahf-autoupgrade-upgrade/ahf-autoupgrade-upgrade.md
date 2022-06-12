@@ -23,7 +23,7 @@ In this lab, you will:
 
 * You need AHF installed user privileges or **root** access to run **getupgrade**, **setupgrade**, **unsetupgrade**, and **upgrade** commands.
 * **openssl** is needed for all platforms to support **autoupgrade**. If **openssl** is not present, then **autoupgrade** exits gracefully.
-* AHF version 21.4.3. You can only upgrade AHF from 21.4.3 to 22.1 so uninstall if you have any older versions of AHF.
+* AHF version 21.4.3. You can only upgrade AHF from 21.4.3 to 22.1.1 so uninstall if you have any older versions of AHF.
 
 ### Operating Systems Supported to Upgrade AHF Automatically
 
@@ -69,7 +69,7 @@ If the stage location is a local file system and if the AHF installer zip file e
 	```
 	<copy>
 	ls /opt/local
-	AHF-LINUX_v22.1.0.zip
+	AHF-LINUX_v22.1.1.zip
 	</copy>
 	```
 	**Note:** Oracle Trace File Analyzer scheduler calls **ahfctl upgrade -nomos** at a given frequency, in this example, auto-upgrade will happen every 30 days at 3 AM. You can also initiate automatic upgrade from the command-line using the **ahfctl upgrade** command.
@@ -397,7 +397,7 @@ If the stage location is ACFS and if the AHF installer zip file exists in the st
 
 	 total 410272
 	 drwxr-xr-x 6 root root      4096 Jan 24 21:46 ahf
-	 -rwxrwxrwx 1 root root 420064080 Jan 29 14:15 AHF-LINUX_v22.2.0.zip
+	 -rwxrwxrwx 1 root root 420064080 Jan 29 14:15 AHF-LINUX_v22.1.1.zip
 	 drwxr-x--x 2 root root      4096 Jan 26 11:10 analyzer
 	 drwxr-xr-x 2 root root      4096 Jan 26 11:11 bin
 	 drwxr-x--x 3 root root      4096 Jan 26 11:10 chm

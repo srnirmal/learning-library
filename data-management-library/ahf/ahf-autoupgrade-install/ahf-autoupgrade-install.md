@@ -182,7 +182,7 @@ The daemon restarts at 1 am every day to discover environment changes. The daemo
 
 ## Task 3: Install AHF on Linux or UNIX as Non-root User in Non-Daemon Mode
 
-If you are unable to install as **root**, then install Oracle Autonomous Health Framework as the **Oracle home** owner.
+If you are unable to install as **root**, then install Oracle Autonomous Health Framework as a non-root user, for example, **opc**.
 
 **Note:**
 - Perl version 5.10 or later is required to install Oracle Autonomous Health Framework.

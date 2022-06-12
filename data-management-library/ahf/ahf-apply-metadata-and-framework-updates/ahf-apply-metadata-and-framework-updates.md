@@ -19,6 +19,18 @@ In this lab, you will:
 This lab assumes you have:
 * AHF install user privileges to run the **applyupdate**, **queryupdate**, **rollbackupdate**, and **deleteupdatebackup** commands.
 
+**Note:** You must have installed 22.1.1 to apply the AHF framework and metadata updates.
+
+```
+<copy>
+.-------------------------------------------------------------------------------.
+| Host     | Status of TFA | PID    | Port  | Version    | Build ID             |
++----------+---------------+--------+-------+------------+----------------------+
+| den02mwa | RUNNING       | 105916 | 59452 | 22.1.1.0.0 | 22100020220130232427 |
+'----------+---------------+--------+-------+------------+----------------------'
+</copy>
+```
+
 ## Task 1: Apply AHF Framework and Metadata Updates
 
 You must apply metadata and framework updates to all cluster nodes.
@@ -75,7 +87,7 @@ To delete the backup directories on all nodes in a cluster, you must run the **a
 
 You must not delete the backup directories randomly. Oracle recommends deleting the backup directories in the same order the updates were applied. If you delete the backup directories associated with a specific timestamp, then you will not be able to roll back to the state before the updates with that specific timestamp were applied.
 
-Upgrading AHF using the **ahf_setup script** automatically deletes the backup directories of the previous AHF versions.
+Upgrading AHF using the **ahf_setup** script automatically deletes the backup directories of the previous AHF versions.
 
 1. To delete the backup directories:
 
